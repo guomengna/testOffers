@@ -171,6 +171,7 @@ public class test {
         operationTree.exchangeLeftRight(tree);*/
 
         //顺时针打印矩阵
+        /*
         int[][] a = {{1,2,3,4},{5,6,7,8},
                 {9,10,11,12},{13,14,15,16}};
         OperateMatrix operateMatrix = new OperateMatrix();
@@ -178,10 +179,10 @@ public class test {
         arrayList=operateMatrix.printMatrix2(a);
         for(int i=0;i<arrayList.size();i++){
             System.out.print(arrayList.get(i)+" ");
-        }
+        }*/
 
-
-
+        OperationStack operationStack = new OperationStack();
+        operationStack.min();
 
 
     }
