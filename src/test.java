@@ -1,3 +1,4 @@
+import java.sql.SQLSyntaxErrorException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -180,9 +181,37 @@ public class test {
         for(int i=0;i<arrayList.size();i++){
             System.out.print(arrayList.get(i)+" ");
         }*/
-
+        //选出栈中最小的元素
+        /*
         OperationStack operationStack = new OperationStack();
-        operationStack.min();
+        operationStack.min();*/
+
+        //栈的压入、弹出序列
+        /*
+        int a[] = {1,2,3,4,5};
+        int b[] = {4,5,3,2,1};
+        int c[] = {4,3,5,1,2};
+        boolean result = false;
+        OperationStack operationStack = new OperationStack();
+        result = operationStack.isPushAndPop(a,b);
+        System.out.println("result is: "+result); */
+
+        //从上往下打印出二叉树的每个节点，同层节点从左至右打印。
+        /*
+        OprationQueue oprationQueue = new OprationQueue();
+
+        BinTree bt4=new BinTree(null,null,4);
+        BinTree bt5=new BinTree(null,null,5);
+        BinTree bt3=new BinTree(null,null,3);
+        BinTree bt2=new BinTree(bt4,bt5,2);
+        BinTree bt1=new BinTree(bt2,bt3,1);
+        BinTree tree = new BinTree();
+        tree.setRoot(bt1);
+        oprationQueue.printBinTree(tree); */
+
+
+
+
 
 
     }
