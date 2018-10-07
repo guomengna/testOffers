@@ -2,6 +2,7 @@ import java.sql.SQLSyntaxErrorException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.Scanner;
 
 public class test {
 
@@ -208,10 +209,32 @@ public class test {
         BinTree tree = new BinTree();
         tree.setRoot(bt1);
         oprationQueue.printBinTree(tree); */
+        //数组中出现超过一半的数字
+//        OperationArraylist operationArraylist = new OperationArraylist();
+//        int[] a = {1,2,3,3,3,3,3,3,3,3,3,2,2,2,5,4,2};
+//        operationArraylist.ifmoreThanHalf(a);
+        //最小的K个数
+//        ArrayList<Integer> input = inputMethodFromKeyboard();
+////        OperationArraylist operationArraylist = new OperationArraylist();
+////        operationArraylist.findKsmall(input,2);
+        //给一个数组，返回最大连续子序列的和
+//        OperationArraylist operationArraylist = new OperationArraylist();
+//        int[] a = {6,-3,-2,7,-15,1,2,2};
+//        operationArraylist.continueSubsequence(a);
+        //从1到n中，1出现的次数
+//        OperationArraylist operationArraylist = new OperationArraylist();
+//        operationArraylist.NumberOf1Between1AndN_Solution(13);
+//        operationArraylist.NumberOf1Between1AndN_Solution(23);
+//        //求13到23之间的1的个数
+//        int count = 0;
+//        count = operationArraylist.NumberOf1Between1AndN_Solution(23)-
+//                operationArraylist.NumberOf1Between1AndN_Solution(13);
+//        System.out.println("13到23之间的1的个数为： "+count);
+//        operationArraylist.NumberOf1Between1AndN_Solution(20);
+//        operationArraylist.NumberOf1Between1AndN_Solution(21);
+//        operationArraylist.NumberOf1Between1AndN_Solution1(23);
 
-
-
-
+        //把数组排成最小数
 
 
     }
@@ -243,4 +266,29 @@ public class test {
         return -1;
     }
 
+    /**
+     * 从键盘中读取输入的数据到程序中
+     * 输入q代表结束读取
+     * @return
+     */
+    public static ArrayList<Integer> inputMethodFromKeyboard(){
+        ArrayList<Integer> inputNumbers = new ArrayList<>();
+        int number = 0;
+        String input="";
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("请输入数字，以输入q结束");
+        while(!input.equals("q")){
+            input = scanner.next();
+            System.out.println("输入内容为： "+input);
+            if(!input.equals("q")){
+                number = Integer.parseInt(input);
+                inputNumbers.add(number);
+            }
+        }
+        for(int i=0;i<inputNumbers.size();i++){
+            System.out.print(inputNumbers.get(i)+" ");
+        }
+        System.out.println();
+        return inputNumbers;
+    }
 }
