@@ -235,6 +235,12 @@ public class test {
 //        operationArraylist.NumberOf1Between1AndN_Solution1(23);
 
         //把数组排成最小数
+        OperationArraylist operationArraylist = new OperationArraylist();
+        int[] a = {24,3,6,1};
+        operationArraylist.minNumberInArray(a);
+        System.out.println();
+        int[] b = {3,32,321};
+        operationArraylist.minNumberInArray(b);
 
 
     }

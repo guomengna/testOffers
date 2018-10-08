@@ -132,7 +132,44 @@ public class OperationArraylist {
      * 正整数数组中，把数组排成最小数
      * 例如输入数组{3，32，321}，则打印出这三个数字能排成的最小数字为321323
       */
-    public void minNumberInArray(int[] a){
-
+    public String minNumberInArray(int[] a){
+        //冒泡排序，替换<运算符
+        for(int i=0;i<a.length;i++){
+            for(int j=i;j<a.length;j++){
+                if(isSmaller(a[j]+"",a[i]+"")){
+                    int temp = a[i];
+                    a[i] = a[j];
+                    a[j] = temp;
+                }
+            }
+        }
+        StringBuffer stringBuffer = new StringBuffer();
+        for(int i=0;i<a.length;i++){
+            stringBuffer.append(a[i]);
+        }
+        System.out.print(stringBuffer.toString());
+        return stringBuffer.toString();
+    }
+    //a是否小于等于b
+    public Boolean isSmaller(String a, String b){
+        Boolean result = false;
+        int count = 0;
+        for(int i=0;i<a.length();i++){
+            String left = a+b;
+            String right = b+a;
+            if(left.charAt(i)<right.charAt(i)){
+                result = true;
+                break;
+            }else if(left.charAt(i)>right.charAt(i)){
+                result = false;
+                break;
+            }else if(left.charAt(i)==right.charAt(i)){
+                count++;
+            }
+        }
+        if(count==a.length()){
+            result = true;
+        }
+        return result;
     }
 }
