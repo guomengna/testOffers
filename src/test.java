@@ -235,12 +235,20 @@ public class test {
 //        operationArraylist.NumberOf1Between1AndN_Solution1(23);
 
         //把数组排成最小数
+//        OperationArraylist operationArraylist = new OperationArraylist();
+//        int[] a = {24,3,6,1};
+//        operationArraylist.minNumberInArray(a);
+//        System.out.println();
+//        int[] b = {3,32,321};
+//        operationArraylist.minNumberInArray(b);
+        //第一个只出现一次的字符
+//        OperationArraylist operationArraylist = new OperationArraylist();
+//        operationArraylist.firstCharOnlyOnce("google");
+
+        //数组中的逆序对
         OperationArraylist operationArraylist = new OperationArraylist();
-        int[] a = {24,3,6,1};
-        operationArraylist.minNumberInArray(a);
-        System.out.println();
-        int[] b = {3,32,321};
-        operationArraylist.minNumberInArray(b);
+        int[] a = {1,2,3,4,5,6,7,0};
+        operationArraylist.countsOfReversePair(a);
 
 
     }

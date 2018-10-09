@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.LinkedHashMap;
 
 public class OperationArraylist {
     /**数组中出现超过一半的数字
@@ -171,5 +172,78 @@ public class OperationArraylist {
             result = true;
         }
         return result;
+    }
+
+    /**
+     * 第一个只出现一次的字符
+     * 在一个字符串(0<=字符串长度<=10000，全部由字母组成)
+     * 中找到第一个只出现一次的字符,并返回它的位置, 如果没有则返回 -1（需要区分大小写）
+     */
+    public int firstCharOnlyOnce(String s){
+        int result = 0;
+        for(int i=0;i<s.length();i++){
+            int count = 1;
+            for(int j=0;j<s.length();j++){
+                if(s.charAt(i)==s.charAt(j) && i!=j){
+                    count += 1;
+                }
+            }
+            if(count == 1){
+                result = i;
+                break;
+            }
+            System.out.println(s.charAt(i)+"出现了"+count+"次");
+        }
+        System.out.println("the char is "+s.charAt(result)+" and it's position is: "+result);
+        return result;
+    }
+
+    /**
+     * 数组中的逆序对
+     * 在数组中的两个数字，如果前面一个数字大于后面的数字，则这两个数字组成一个逆序对。
+     * 输入一个数组,求出这个数组中的逆序对的总数P，并将P对1000000007取模的结果输出。 即输出P%1000000007
+     * 例如：
+     * 输入：1,2,3,4,5,6,7,0
+     * 输出：7
+     */
+    public void countsOfReversePair(int[] a){
+        int count = 0;
+        for(int i=0;i<a.length;i++){
+            for(int j=i;j<a.length;j++){
+                if(a[i]>a[j]){
+                    count += 1;
+                }
+            }
+        }
+        System.out.println(count%1000000007+"");
+    }
+
+    public int firstCharOnlyOnce1(String str){
+        LinkedHashMap<Character,Integer> map = new LinkedHashMap<>();
+        for(int i=0;i<str.length();i++){
+            if(map.containsKey(str.charAt(i))){
+                int time = map.get(str.charAt(i));
+                map.put(str.charAt(i),++time);
+            }else {
+                map.put(str.charAt(i),1);
+            }
+        }
+        int pos = -1;
+        int i=0;
+        for(;i<str.length();i++){
+            char c = str.charAt(i);
+            if(map.get(c) == 1){
+                return i;
+            }
+        }
+        return pos;
+    }
+
+    /**
+     * 输入两个链表，找出它们的第一个公共节点
+     */
+    public ListNode FindFirstCommonNode(ListNode pHead1, ListNode pHead2) {
+
+        return null;
     }
 }
