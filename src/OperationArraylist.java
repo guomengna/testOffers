@@ -243,7 +243,40 @@ public class OperationArraylist {
      * 输入两个链表，找出它们的第一个公共节点
      */
     public ListNode FindFirstCommonNode(ListNode pHead1, ListNode pHead2) {
+        LinkedHashMap<Integer,Integer> map = new LinkedHashMap<>();
+        ListNode current1 = pHead1;
+        ListNode current2 = pHead2;
+        ListNode result = null;
+        while(current1 != null){
+            map.put(Integer.parseInt(current1.data.toString()),null);
+            System.out.println("add "+current1.data+" into map");
+            current1 = current1.next;
 
-        return null;
+        }
+        while(current2 != null){
+            System.out.println("current2.data = "+current2.data);
+            if(map.containsKey(Integer.parseInt(current2.data.toString()))){
+                System.out.println("map.containsKey(current2)"+current2.data);
+                result = current2;
+            }
+            current2 = current2.next;
+        }
+        System.out.println(result.data+"");
+        return result;
+    }
+    /**
+     * 统计一个数字在排序数组中出现的次数。
+     */
+    public int getNumberOfK(int[] array , int k) {
+        int count = 0;
+        for(int i=0;i<array.length;i++){
+            if(array[i] == k){
+                count += 1;
+            }else if(array[i]>k){
+                break;
+            }
+        }
+        System.out.println("count="+count);
+        return count;
     }
 }

@@ -246,9 +246,30 @@ public class test {
 //        operationArraylist.firstCharOnlyOnce("google");
 
         //数组中的逆序对
-        OperationArraylist operationArraylist = new OperationArraylist();
-        int[] a = {1,2,3,4,5,6,7,0};
-        operationArraylist.countsOfReversePair(a);
+//        OperationArraylist operationArraylist = new OperationArraylist();
+//        int[] a = {1,2,3,4,5,5,5,6,7,0};
+//        operationArraylist.countsOfReversePair(a);
+//        ListNode l1 = new ListNode(1);
+//        ListNode l2 = new ListNode(2);
+//        ListNode l3 = new ListNode(3);
+//        l1.next = l2;
+//        l2.next = l3;
+//        ListNode l4 = new ListNode(4);
+//        ListNode l5 = new ListNode(2);
+//        ListNode l6 = new ListNode(6);
+//        l4.next = l5;
+//        l5.next = l6;
+//        LinkedList<ListNode> list1 = new LinkedList<ListNode>();
+//        list1.add(l1);
+//        list1.add(l2);
+//        list1.add(l3);
+//        LinkedList<ListNode> list2 = new LinkedList<ListNode>();
+//        list2.add(l4);
+//        list2.add(l5);
+//        list2.add(l6);
+//        operationArraylist.FindFirstCommonNode(list1.getFirst(),list2.getFirst());
+        //统计一个数字在排序数组中出现的次数。
+//        operationArraylist.getNumberOfK(a,5);
 
 
     }
