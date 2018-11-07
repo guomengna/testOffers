@@ -279,4 +279,29 @@ public class OperationArraylist {
         System.out.println("count="+count);
         return count;
     }
+    /**
+     *一个整型数组里除了两个数字之外，其他的数字都出现了偶数次。
+     *请写程序找出这两个只出现一次的数字。
+     */
+    public void findTwoOnceNumber(int[] array){
+        int counter = 0;
+        LinkedHashMap<Integer,Integer> linkedHashMap = new LinkedHashMap<>();
+        for(int i=0;i<array.length;i++){
+            if(linkedHashMap.containsKey(array[i])){
+                int time = linkedHashMap.get(array[i]);
+                linkedHashMap.put(array[i],++time);
+            }else {
+                linkedHashMap.put(array[i],1);
+            }
+        }
+        for(int j=0;j<array.length;j++){
+            int t = array[j];
+            if(counter != 2){
+                if(linkedHashMap.get(t) == 1){
+                    System.out.println("出现一次的数是："+array[j]);
+                    counter += 1;
+                }
+            }
+        }
+    }
 }

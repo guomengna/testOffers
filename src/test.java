@@ -270,8 +270,11 @@ public class test {
 //        operationArraylist.FindFirstCommonNode(list1.getFirst(),list2.getFirst());
         //统计一个数字在排序数组中出现的次数。
 //        operationArraylist.getNumberOfK(a,5);
-
-
+        //一个整型数组里除了两个数字之外，其他的数字都出现了偶数次。
+        // 请写程序找出这两个只出现一次的数字。
+        int[] a = {1,1,2,2,3,4,4,5,6,6};
+        OperationArraylist operationArraylist = new OperationArraylist();
+        operationArraylist.findTwoOnceNumber(a);
     }
     /**
      * 根据先序遍历和中序遍历获取到二叉树
