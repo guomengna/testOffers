@@ -272,10 +272,20 @@ public class test {
 //        operationArraylist.getNumberOfK(a,5);
         //一个整型数组里除了两个数字之外，其他的数字都出现了偶数次。
         // 请写程序找出这两个只出现一次的数字。
-        int[] a = {1,1,2,2,3,4,4,5,6,6};
-        OperationArraylist operationArraylist = new OperationArraylist();
-        operationArraylist.findTwoOnceNumber(a);
+//        int[] a = {1,1,2,2,3,4,4,5,6,6};
+//        OperationArraylist operationArraylist = new OperationArraylist();
+//        operationArraylist.findTwoOnceNumber(a);
+        Tools tools = new Tools();
+//        tools.LianxuS(100);
+//        int[] a = {1,2,3,4,5,6};
+//        tools.LianxuSwith2number(a,5);
+//        String a = "abcXYZdef";
+//        tools.moveLeft(a,3);
+//        tools.fanzhuanWord("I am a girl");
+        System.out.println(tools.sum(10));
+
     }
+
     /**
      * 根据先序遍历和中序遍历获取到二叉树
      * @param preOrder
