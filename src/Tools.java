@@ -1,5 +1,8 @@
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.LinkedHashMap;
+import java.util.Set;
 
 public class Tools {
     /**
@@ -122,5 +125,68 @@ public class Tools {
         boolean bool=(n!=0) && ((sum+=sum(n-1))!=0);
         return sum;
     }
+
+    /**
+     * 数组中重复的数字
+     * @param number，输入的数组
+     * @param numberth，第numberth个重复的数字
+     */
+    public int duplication(int[] number, int numberth){
+        LinkedHashMap<Integer,Integer> hashMap = new LinkedHashMap<>();
+        for(int i=0;i<number.length;i++){
+            if (hashMap.containsKey(number[i])){
+                int count = hashMap.get(number[i]);
+                hashMap.put(number[i],++count);
+            }else{
+                hashMap.put(number[i],1);
+            }
+        }
+
+        Set<Integer> set = new HashSet<>();
+        for(int i=0;i<number.length;i++){
+            if (hashMap.get(number[i])>1){
+                set.add(number[i]);
+            }
+        }
+        ArrayList<Integer> arrayList = new ArrayList<>(set);
+//        for(int j=0;j<arrayList.size();j++){
+//            System.out.println(arrayList.get(j));
+//        }
+        if(numberth>set.size()){
+            System.out.println("超出索引，没有第"+numberth+"个重复的数字");
+        }else {
+            System.out.println(arrayList.get(numberth));
+            return arrayList.get(numberth);
+        }
+        return -1;
+    }
+
+    /**
+     * 给定一个数组A[0,1,...,n-1],请构建一个数组B[0,1,...,n-1].
+     * 其中B中的元素B[i]=A[0]*A[1]*...*A[i-1]*A[i+1]*...*A[n-1]。
+     * 不能使用除法。
+     * @param a
+     * @return
+     */
+    public int[] getB(int[] a){
+        int[] b = new int[a.length];
+        for(int i=0;i<b.length;i++){
+            b[i] = 1;
+            for(int j=0;j<a.length;j++){
+                if(j!=i){
+                    b[i] *= a[j];
+                }else if(i==j){
+                    b[i] *= 1;
+                }
+            }
+        }
+        for(int k=0;k<b.length;k++){
+            System.out.print(b[k]+" ");
+        }
+        return b;
+    }
+
+
+
 
 }

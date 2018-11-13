@@ -282,7 +282,12 @@ public class test {
 //        String a = "abcXYZdef";
 //        tools.moveLeft(a,3);
 //        tools.fanzhuanWord("I am a girl");
-        System.out.println(tools.sum(10));
+//        System.out.println(tools.sum(10));
+//        int[] number = {2,3,1,0,2,5,3};
+//        tools.duplication(number,3);
+        int[] a = {1,2,3};
+        tools.getB(a);
+
 
     }
 
