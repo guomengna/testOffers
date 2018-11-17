@@ -186,7 +186,130 @@ public class Tools {
         return b;
     }
 
+    /**
+     * 字符串匹配
+     * 模式中的字符'.'表示任意一个字符，
+     * '*'表示它前面的字符可以出现任意次（包含0次）
+     * 例如，字符串"aaa"与模式"a.a"和"ab*ac*a"匹配，
+     * 但是与"aa.a"和"ab*a"均不匹配
+     */
+    public boolean ifMatch(char[] a, char[] b){
+        boolean flag = false;
+        ArrayList<String> arrayListA = new ArrayList<>();
+        for(int i=0;i<a.length;i++){
+            arrayListA.add(String.valueOf(a[i]));
+//            System.out.print(arrayListA.get(i)+" ");
+        }
+//        System.out.println();
+        ArrayList<String> arrayListB = new ArrayList<>();
+        for(int i=0;i<b.length;i++){
+            arrayListB.add(String.valueOf(b[i]));
+//            System.out.print(arrayListB.get(i)+" ");
+        }
+        for(int i=0;i<arrayListA.size();i++){
+//            System.out.println("A:i="+i);
+            if(arrayListA.get(i).equals("*")){
+                arrayListA.remove(i);
+                String s = arrayListA.get(i-1);
+//                System.out.println("s="+s);
+                if(arrayListA.get(i-1).equals(s)){
+                    arrayListA.remove(i-1);
+                    i -= 1;
+                }
+            }
+        }
+        for(int i=0;i<arrayListB.size();i++){
+//            System.out.println("B:i="+i);
+            if(arrayListB.get(i).equals("*")){
+                arrayListB.remove(i);
+                String s = arrayListB.get(i-1);
+                if(arrayListB.get(i-1).equals(s)){
+                    arrayListB.remove(i-1);
+                    i -= 1;
+                }
+                i += 1;
+            }
+        }
+//        for(int j=0;j<arrayListA.size();j++){
+//            System.out.print(arrayListA.get(j)+" ");
+//        }
+//        System.out.println();
+//        for(int j=0;j<arrayListB.size();j++){
+//            System.out.print(arrayListB.get(j)+" ");
+//        }
+        if(arrayListA.size() == arrayListB.size()){
+            //开始比较AB是否相同
+            for(int indexA=0,indexB=0;indexA<arrayListA.size();){
+                if(ifEqual(arrayListA.get(indexA),arrayListB.get(indexB))){
+                    indexA += 1;
+                    indexB += 1;
+                }else {
+                    break;
+                }
+                flag = true;
+            }
+        }else {
+            flag = false;
+        }
+//        System.out.println();
+        System.out.println("result is: "+flag);
+        return flag;
+    }
+    public boolean ifEqual(String a, String b){
+        boolean flag = false;
+        if(a.equals(b)){
+            flag = true;
+        }else if(a.equals(".")){
+            flag = true;
+        }else if(b.equals(".")){
+            flag = true;
+        }
+        return flag;
+    }
 
+    /**
+     * 滑动窗口最大值
+     * 给定一个数组和滑动窗口的大小，找出所有滑动窗口里数值的最大值。
+     */
+    public ArrayList<Integer> MaxInWindows(int[] num, int size){
+        ArrayList<Integer> result = new ArrayList<>();
+        for(int i=0;i<num.length-size+1;i++){
+            ArrayList<Integer> temp = new ArrayList<>();
+            for(int j=i;j<i+size;j++){
+                temp.add(num[j]);
+            }
+            int max = temp.get(0);
+            for(int j=1;j<temp.size();j++){
+                if(temp.get(j)>max){
+                    max = temp.get(j);
+                }
+            }
+            result.add(max);
+        }
+        for(int i=0;i<result.size();i++){
+            System.out.print(result.get(i));
+        }
+        return result;
+    }
+
+    /**
+     * 矩阵中的路径
+     */
+    public boolean hasPath(char[] matrix, int rows, int cols, char[] str){
+        char[][] chars = new char[3][4];
+        char[] temp;
+        String s = String.valueOf(matrix);
+        for(int i=0;i<rows;i++){
+            String tem = s.substring(i*cols,i*cols+cols);
+            char[] a = tem.toCharArray();
+            System.out.println(a);
+            chars[i] = a;
+        }//矩阵建立好了
+        //开始判断路径是否存在
+        ArrayList<String> index = new ArrayList<>();//存储已经访问过的矩阵字符的编号。用ij形式表示。
+
+        return false;
+    }
 
 
 }

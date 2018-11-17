@@ -1,3 +1,5 @@
+import org.omg.Messaging.SYNC_WITH_TRANSPORT;
+
 import java.sql.SQLSyntaxErrorException;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -7,6 +9,7 @@ import java.util.Scanner;
 public class test {
 
     public static void main(String[] args) {
+
 //        OperateCheckerboard operateCheckerboard = new OperateCheckerboard();
 //        operateCheckerboard.solusion(5, 4);
 
@@ -285,11 +288,20 @@ public class test {
 //        System.out.println(tools.sum(10));
 //        int[] number = {2,3,1,0,2,5,3};
 //        tools.duplication(number,3);
-        int[] a = {1,2,3};
-        tools.getB(a);
-
+//        int[] a = {1,2,3};
+//        tools.getB(a);
+//        char[] a = {'a','a','a'};
+//        char[] b = {'a','b','*','a','c','*','a'};
+//        char[] c = {'a','a','.','a'};
+//        tools.ifMatch(a,c);
+//        int[] a = {2,3,4,2,6,2,5,1};
+//        tools.MaxInWindows(a,3);
+        char[] a = {'a','b','c','e','s','f','c','s','a','d','e','e'};
+        char[] b = {'b','c','c','e','d'};
+        tools.hasPath(a,3,4,b);
 
     }
+
 
     /**
      * 根据先序遍历和中序遍历获取到二叉树
